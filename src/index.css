@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Special+Elite&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 30% 95%;
+    --foreground: 30 20% 15%;
+
+    --card: 42 40% 93%;
+    --card-foreground: 30 20% 15%;
+
+    --popover: 40 30% 95%;
+    --popover-foreground: 30 20% 15%;
+
+    --primary: 24 70% 50%;
+    --primary-foreground: 40 30% 97%;
+
+    --secondary: 35 30% 88%;
+    --secondary-foreground: 30 20% 20%;
+
+    --muted: 38 20% 90%;
+    --muted-foreground: 30 10% 45%;
+
+    --accent: 160 30% 45%;
+    --accent-foreground: 40 30% 97%;
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 35 25% 82%;
+    --input: 35 25% 85%;
+    --ring: 24 70% 50%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 40 30% 93%;
+    --sidebar-foreground: 30 20% 15%;
+    --sidebar-primary: 24 70% 50%;
+    --sidebar-primary-foreground: 40 30% 97%;
+    --sidebar-accent: 38 20% 88%;
+    --sidebar-accent-foreground: 30 20% 15%;
+    --sidebar-border: 35 25% 82%;
+    --sidebar-ring: 24 70% 50%;
+
+    /* Scrapbook-specific tokens */
+    --tape: 38 80% 65%;
+    --paper: 42 35% 96%;
+    --grid-line: 35 15% 85%;
+    --stamp: 0 55% 45%;
+    --boarding-pass: 42 40% 94%;
+    --boarding-pass-accent: 200 50% 45%;
+    --boarding-pass-tear: 42 25% 88%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Scrapbook grid background */
+.scrapbook-bg {
+  background-image:
+    linear-gradient(hsl(var(--grid-line)) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--grid-line)) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Washi tape effect */
+.washi-tape {
+  background: hsl(var(--tape));
+  height: 28px;
+  width: 100px;
+  opacity: 0.85;
+  transform: rotate(-2deg);
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  margin-left: -50px;
+  z-index: 10;
+}
+
+/* Torn paper edge */
+.torn-edge-bottom {
+  position: relative;
+}
+.torn-edge-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: inherit;
+  clip-path: polygon(
+    0% 0%, 3% 60%, 6% 20%, 10% 80%, 14% 30%, 18% 70%, 22% 10%, 26% 90%, 30% 40%,
+    34% 80%, 38% 20%, 42% 60%, 46% 0%, 50% 70%, 54% 30%, 58% 80%, 62% 10%,
+    66% 60%, 70% 20%, 74% 90%, 78% 40%, 82% 70%, 86% 10%, 90% 80%, 94% 30%,
+    98% 60%, 100% 0%
+  );
+}
+
+/* Boarding pass perforation */
+.perforation {
+  border-left: 3px dashed hsl(var(--border));
+}
+
+/* Handwritten font class */
+.font-handwritten {
+  font-family: 'Caveat', cursive;
+}
+
+.font-typewriter {
+  font-family: 'Special Elite', cursive;
+}
+
+/* Stamp rotation variations */
+.stamp-rotate-1 { transform: rotate(-3deg); }
+.stamp-rotate-2 { transform: rotate(2deg); }
+.stamp-rotate-3 { transform: rotate(-1.5deg); }
+
+/* Paper shadow */
+.paper-shadow {
+  box-shadow: 2px 3px 8px hsl(30 20% 15% / 0.12), 0 1px 3px hsl(30 20% 15% / 0.08);
+}
+
+/* Checkbox custom style */
+.scrapbook-check {
+  accent-color: hsl(var(--accent));
+}
