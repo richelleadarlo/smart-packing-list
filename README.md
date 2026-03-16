@@ -2,6 +2,8 @@
 
 Smart Packing List is a simple web app that helps users prepare for trips by creating a reusable packing checklist. Users can create a packing template once and duplicate it for new trips, making it easy to stay organized.
 
+![thumbnail](./public/thumbnail.png)
+
 ##  Features
 - Create a **reusable packing list template**
 - Start a **new trip using the template**
