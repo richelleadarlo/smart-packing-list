@@ -23,5 +23,3 @@ Smart Packing List is a simple web app that helps users prepare for trips by cre
 npm install
 npm run dev
 ```
-OR visit the project live at [link]
-
